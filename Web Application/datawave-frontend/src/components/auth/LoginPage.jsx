@@ -71,7 +71,7 @@ export default function LoginPage() {
       {/* Hero Section */}
       <section className="hero">
         <div className="hero-text">
-          <h1>
+          <h1 >
             Bayanihan Ledger: <br />
             Your Path to <br />
             Financial Empowerment

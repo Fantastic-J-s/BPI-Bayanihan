@@ -46,8 +46,14 @@
   font-size: 44px;
   font-weight: bold;
   margin-bottom: 20px;
-  color: #fff;/* keep BPI maroon for emphasis */
+  color: #fff;              /* keep text white */
+  background: #B00020;      /* BPI red */
+  padding: 10px 20px;       /* space around text */
+  border-radius: 8px;       /* optional rounded edges */
+  display: inline-block;    /* make the background hug the text */
 }
+
+
 
 .hero-text p {
   font-size: 16px;
