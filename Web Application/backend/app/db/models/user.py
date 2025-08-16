@@ -1,5 +1,5 @@
-from sqlalchemy.orm import Mapped, mapped_column
-from sqlalchemy import String, Integer
+from sqlalchemy.orm import Mapped, mapped_column, relationship
+from sqlalchemy import String, Integer, ForeignKey
 from app.db.base import Base
 
 
@@ -11,3 +11,7 @@ class User(Base):
         String(254), unique=True, index=True, nullable=False
     )
     password_hash: Mapped[str] = mapped_column(String(255), nullable=False)
+
+    # NEW: link user to barangay
+    barangay_id: Mapped[int] = mapped_column(ForeignKey("barangays.id"), nullable=True)
+    barangay: Mapped["Barangay"] = relationship("Barangay", back_populates="residents")

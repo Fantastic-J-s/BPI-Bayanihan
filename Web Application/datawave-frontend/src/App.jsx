@@ -21,7 +21,11 @@ export default function App() {
       {/* catch-all: redirect unknown paths back to / */}
       <Route path="*" element={<Navigate to="/" replace />} />
       <Route path="/dashboard2" element={<Dashboard2 />} />
-      <Route path="/form" element={<Form />} />
+      <Route path="/form" element={
+        <ProtectedRoute>
+        <Form />
+        </ProtectedRoute>
+        } />
 
         <Route
         path="/home"

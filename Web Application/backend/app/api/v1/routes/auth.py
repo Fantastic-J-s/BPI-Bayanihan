@@ -5,6 +5,7 @@ import jwt
 
 from app.db.engine import get_session
 from app.db.models.user import User
+from app.db.models.barangay import Barangay  # NEW: barangay model
 from app.core.security import (
     hash_password,
     verify_password,
@@ -12,7 +13,6 @@ from app.core.security import (
     decode_token,
 )
 
-# ✅ import schemas from the separate file
 from app.schemas.v1.auth import RegisterRequest, LoginRequest, TokenResponse, UserOut
 
 router = APIRouter(prefix="/v1/auth", tags=["auth"])
@@ -21,11 +21,28 @@ oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/v1/auth/login")
 
 @router.post("/register", response_model=UserOut, status_code=status.HTTP_201_CREATED)
 def register(payload: RegisterRequest, session: Session = Depends(get_session)):
+    # Check duplicate email
     if session.query(User).filter(User.email == payload.email).first():
         raise HTTPException(
             status_code=status.HTTP_409_CONFLICT, detail="Email already registered"
         )
-    user = User(email=payload.email, password_hash=hash_password(payload.password))
+
+    # Validate barangay if provided
+    barangay = None
+    if payload.barangay_id:
+        barangay = session.get(Barangay, payload.barangay_id)
+        if not barangay:
+            raise HTTPException(
+                status_code=status.HTTP_404_NOT_FOUND, detail="Barangay not found"
+            )
+
+    # Create user with optional barangay link
+    user = User(
+        email=payload.email,
+        password_hash=hash_password(payload.password),
+        barangay_id=payload.barangay_id,
+    )
+
     session.add(user)
     session.commit()
     session.refresh(user)

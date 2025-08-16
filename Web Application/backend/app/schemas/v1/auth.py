@@ -1,9 +1,11 @@
 from pydantic import BaseModel, EmailStr, Field
+from typing import Optional
 
 
 class RegisterRequest(BaseModel):
     email: EmailStr
     password: str = Field(min_length=8, max_length=128)
+    barangay_id: Optional[int] = None  # NEW: assign barangay on signup
 
 
 class LoginRequest(BaseModel):
@@ -16,8 +18,18 @@ class TokenResponse(BaseModel):
     token_type: str = "bearer"
 
 
+class BarangayOut(BaseModel):
+    id: int
+    name: str
+    mission: Optional[str] = None
+    vision: Optional[str] = None
+
+    model_config = {"from_attributes": True}
+
+
 class UserOut(BaseModel):
     id: int
     email: EmailStr
-    # Pydantic v2 (replaces orm_mode=True)
+    barangay: Optional[BarangayOut] = None  # nested barangay info
+
     model_config = {"from_attributes": True}
