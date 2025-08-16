@@ -1,6 +1,5 @@
 from fastapi import APIRouter, Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordBearer
-from pydantic import BaseModel, EmailStr, Field
 from sqlalchemy.orm import Session
 import jwt
 
@@ -13,33 +12,13 @@ from app.core.security import (
     decode_token,
 )
 
+# ✅ import schemas from the separate file
+from app.schemas.v1.auth import RegisterRequest, LoginRequest, TokenResponse, UserOut
+
 router = APIRouter(prefix="/v1/auth", tags=["auth"])
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/v1/auth/login")
 
 
-# ---------- Schemas (API contract) ----------
-class RegisterRequest(BaseModel):
-    email: EmailStr
-    password: str = Field(min_length=8, max_length=128)
-
-
-class LoginRequest(BaseModel):
-    email: EmailStr
-    password: str = Field(min_length=1)
-
-
-class UserOut(BaseModel):
-    id: int
-    email: EmailStr
-
-    model_config = {"from_attributes": True}  # Pydantic v2 (aka orm_mode)
-
-
-class EmailRequest(BaseModel):
-    email: EmailStr
-
-
-# ---------- Routes ----------
 @router.post("/register", response_model=UserOut, status_code=status.HTTP_201_CREATED)
 def register(payload: RegisterRequest, session: Session = Depends(get_session)):
     if session.query(User).filter(User.email == payload.email).first():
@@ -53,7 +32,7 @@ def register(payload: RegisterRequest, session: Session = Depends(get_session)):
     return user
 
 
-@router.post("/login")
+@router.post("/login", response_model=TokenResponse)
 def login(payload: LoginRequest, session: Session = Depends(get_session)):
     user = session.query(User).filter(User.email == payload.email).first()
     if not user or not verify_password(payload.password, user.password_hash):
@@ -61,7 +40,7 @@ def login(payload: LoginRequest, session: Session = Depends(get_session)):
             status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid credentials"
         )
     token = create_access_token({"sub": str(user.id), "email": user.email})
-    return {"access_token": token, "token_type": "bearer"}
+    return TokenResponse(access_token=token)
 
 
 @router.get("/me", response_model=UserOut)
@@ -79,10 +58,3 @@ def me(token: str = Depends(oauth2_scheme), session: Session = Depends(get_sessi
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid or expired token"
         )
-
-
-# Example: email payload with validation (replacing Flask's request.get_json())
-@router.post("/send-email")
-def send_email(payload: EmailRequest):
-    # integrate your mailer here (e.g., FastAPI-mail / any SMTP client)
-    return {"message": f"Email will be sent to {payload.email}"}
