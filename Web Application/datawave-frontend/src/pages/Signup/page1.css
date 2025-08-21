@@ -1,0 +1,545 @@
+/* BPI Bayanihan Welcome Screen CSS */
+
+.bpi-container {
+  min-height: 100vh;
+  background-color: #f9fafb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.bpi-card {
+  width: 100%;
+  max-width: 28rem;
+  background-color: white;
+  border-radius: 1.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+/* Header */
+.bpi-header {
+  background-color: white;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.bpi-header-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.bpi-logo {
+  width: 2rem;
+  height: 2rem;
+  background-color: #dc2626;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bpi-logo-text {
+  color: white;
+  font-weight: bold;
+  font-size: 0.875rem;
+}
+
+.bpi-brand-text {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+/* Progress section */
+.bpi-progress-section {
+  padding: 1rem 1.5rem;
+}
+
+.bpi-progress-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-bottom: 0.5rem;
+}
+
+.bpi-progress-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.bpi-progress-bar {
+  width: 100%;
+  background-color: #e5e7eb;
+  border-radius: 9999px;
+  height: 0.5rem;
+}
+
+.bpi-progress-fill {
+  background-color: #dc2626;
+  height: 0.5rem;
+  border-radius: 9999px;
+  transition: all 0.3s ease;
+}
+
+/* Main content */
+.bpi-main-content {
+  padding: 2rem 1.5rem;
+  text-align: center;
+}
+
+.bpi-heart-container {
+  width: 5rem;
+  height: 5rem;
+  background-color: #fef2f2;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 2rem auto;
+}
+
+.bpi-heart-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  color: #dc2626;
+  fill: currentColor;
+}
+
+.bpi-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1f2937;
+  margin-bottom: 1rem;
+}
+
+.bpi-subtitle {
+  color: #6b7280;
+  margin-bottom: 2rem;
+  line-height: 1.625;
+}
+
+.bpi-features-container {
+  background-color: #fef2f2;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.bpi-features-title {
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 1rem;
+}
+
+.bpi-features-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  font-size: 0.875rem;
+  color: #374151;
+}
+
+.bpi-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.bpi-feature-bullet {
+  width: 0.375rem;
+  height: 0.375rem;
+  background-color: #dc2626;
+  border-radius: 50%;
+}
+
+/* Navigation */
+.bpi-navigation {
+  padding: 0 1.5rem 1.5rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bpi-back-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #6b7280;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.bpi-back-button:hover:not(:disabled) {
+  color: #374151;
+}
+
+.bpi-back-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.bpi-continue-button {
+  background-color: #dc2626;
+  color: white;
+  padding: 0.75rem 2rem;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background-color 0.2s ease;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+}
+
+.bpi-continue-button:hover {
+  background-color: #b91c1c;
+}
+
+.bpi-nav-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+/* Identity verification styles */
+.bpi-shield-icon-container {
+  background-color: #dcfce7;
+}
+
+.bpi-shield-icon {
+  color: #16a34a;
+  fill: none;
+  stroke-width: 2;
+}
+
+.bpi-verification-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.bpi-verification-option {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background-color: white;
+}
+
+.bpi-verification-option:hover {
+  border-color: #dc2626;
+  background-color: #fef2f2;
+}
+
+.bpi-verification-option.selected {
+  border-color: #dc2626;
+  background-color: #fef2f2;
+}
+
+.bpi-verification-option.primary {
+  border-color: #dc2626;
+  background-color: #fef2f2;
+}
+
+.bpi-verification-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  flex-shrink: 0;
+  color: #6b7280;
+}
+
+.bpi-verification-icon svg {
+  width: 100%;
+  height: 100%;
+  stroke-width: 1.5;
+}
+
+.bpi-verification-content {
+  flex: 1;
+  text-align: left;
+}
+
+.bpi-verification-title {
+  font-weight: 600;
+  color: #1f2937;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.bpi-verification-description {
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+.bpi-security-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  background-color: #eff6ff;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.bpi-info-icon {
+  width: 1rem;
+  height: 1rem;
+  color: #3b82f6;
+  flex-shrink: 0;
+  margin-top: 0.125rem;
+}
+
+.bpi-security-note span {
+  font-size: 0.875rem;
+  color: #1e40af;
+  line-height: 1.4;
+}
+
+/* User type selection styles */
+.bpi-user-icon-container {
+  background-color: #f3e8ff;
+}
+
+.bpi-user-icon {
+  color: #8b5cf6;
+  fill: none;
+  stroke-width: 2;
+}
+
+.bpi-user-type-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.bpi-user-type-option {
+  display: flex;
+  flex-direction: column;
+  padding: 1.25rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background-color: white;
+}
+
+.bpi-user-type-option:hover {
+  border-color: #dc2626;
+  background-color: #fef2f2;
+}
+
+.bpi-user-type-option.selected {
+  border-color: #dc2626;
+  background-color: #fef2f2;
+}
+
+.bpi-user-type-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.bpi-user-type-icon {
+  width: 2rem;
+  height: 2rem;
+  flex-shrink: 0;
+  color: #6b7280;
+}
+
+.bpi-user-type-icon svg {
+  width: 100%;
+  height: 100%;
+  stroke-width: 1.5;
+}
+
+.bpi-user-type-content {
+  flex: 1;
+  text-align: left;
+}
+
+.bpi-user-type-title {
+  font-weight: 600;
+  color: #1f2937;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.bpi-user-type-description {
+  color: #6b7280;
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+.bpi-user-type-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.bpi-feature-tag {
+  background-color: #f3f4f6;
+  color: #6b7280;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.375rem;
+  font-weight: 500;
+}
+
+.bpi-user-type-option.selected .bpi-feature-tag {
+  background-color: #fecaca;
+  color: #dc2626;
+}
+
+/* Language selection styles */
+.bpi-language-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.bpi-language-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background-color: white;
+}
+
+.bpi-language-option:hover {
+  border-color: #dc2626;
+  background-color: #fef2f2;
+}
+
+.bpi-language-option.selected {
+  border-color: #dc2626;
+  background-color: #fef2f2;
+}
+
+.bpi-language-text {
+  text-align: left;
+}
+
+.bpi-language-name {
+  font-weight: 600;
+  color: #1f2937;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.bpi-language-native {
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+.bpi-language-check {
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: #dc2626;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bpi-check-icon {
+  width: 1rem;
+  height: 1rem;
+  color: white;
+}
+
+/* Disabled button state */
+.bpi-continue-button.disabled {
+  background-color: #d1d5db;
+  cursor: not-allowed;
+}
+
+.bpi-continue-button.disabled:hover {
+  background-color: #d1d5db;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .bpi-container {
+    padding: 0.5rem;
+  }
+  
+  .bpi-card {
+    border-radius: 1rem;
+  }
+  
+  .bpi-main-content {
+    padding: 1.5rem 1rem;
+  }
+
+  .bpi-language-option {
+    padding: 0.875rem 1rem;
+  }
+
+  .bpi-user-type-option {
+    padding: 1rem;
+  }
+
+  .bpi-user-type-header {
+    gap: 0.75rem;
+  }
+
+  .bpi-verification-option {
+    padding: 0.875rem 1rem;
+  }
+}
+
+/* ---------- Page 5: Personal Information ---------- */
+.bpi-progress-header-left{display:flex;align-items:center;gap:.5rem}
+
+.bpi-form{width:100%;text-align:left}
+.bpi-form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;margin-bottom:1rem}
+.bpi-field{margin-bottom:1rem}
+.bpi-label{display:block;font-size:.875rem;color:#374151;font-weight:600;margin-bottom:.375rem}
+
+.bpi-input,.bpi-select{
+  width:100%;border:1px solid #e5e7eb;background:#fff;border-radius:.5rem;
+  padding:.625rem .75rem;font-size:.95rem;color:#111827;outline:none;
+  transition:border-color .15s ease,box-shadow .15s ease
+}
+.bpi-input::placeholder{color:#9ca3af}
+.bpi-input:focus,.bpi-select:focus{border-color:#dc2626;box-shadow:0 0 0 4px rgba(220,38,38,.15)}
+
+.bpi-select-wrapper{position:relative}
+.bpi-select{
+  appearance:none;-webkit-appearance:none;-moz-appearance:none;
+  background-image:
+    linear-gradient(45deg,transparent 50%,#9ca3af 50%),
+    linear-gradient(135deg,#9ca3af 50%,transparent 50%);
+  background-position:calc(100% - 18px) calc(50% - 3px),calc(100% - 12px) calc(50% - 3px);
+  background-size:6px 6px,6px 6px;background-repeat:no-repeat
+}
+
+.bpi-input-error{border-color:#ef4444!important;box-shadow:0 0 0 4px rgba(239,68,68,.15)!important}
+.bpi-error{margin-top:.375rem;font-size:.8125rem;color:#b91c1c}
+
+/* reuse your existing disabled button styles */
+@media (max-width:640px){.bpi-form-grid{grid-template-columns:1fr}}
