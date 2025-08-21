@@ -1,9 +1,14 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import './page1.css';
 
+type Brgy = { id: number; name: string };
+
 export default function BPIBayanihanPage5() {
   const totalSteps = 6;
   const currentStep = 5;
+
+  // --- HARD-CODED DEFAULT BARANGAY ---
+  const HARDCODED_BRGY: Brgy = { id: 1, name: 'Barangay San Roque' };
 
   const [form, setForm] = useState({
     firstName: '',
@@ -11,24 +16,17 @@ export default function BPIBayanihanPage5() {
     email: '',
     phone: '',
     address: '',
-    barangayId: '',
+    // Preselect the hardcoded barangay so validation passes
+    barangayId: String(HARDCODED_BRGY.id),
     occupation: '',
   });
 
   const [touched, setTouched] = useState<Record<string, boolean>>({});
-  const [barangays, setBarangays] = useState<{ id: number; name: string }[]>([]);
+  const [barangays, setBarangays] = useState<Brgy[]>([]);
   const [loadingBrgy, setLoadingBrgy] = useState(false);
   const [submitting, setSubmitting] = useState(false);
 
-  // Load any cached progress
-  useEffect(() => {
-    try {
-      const cached = JSON.parse(localStorage.getItem('signup.personalInfo') || '{}');
-      setForm((p) => ({ ...p, ...cached }));
-    } catch {}
-  }, []);
-
-  // Fetch barangays (FastAPI: GET /v1/barangays)
+  // Fetch barangays and ensure the hardcoded one is present
   useEffect(() => {
     let isMounted = true;
     (async () => {
@@ -36,9 +34,17 @@ export default function BPIBayanihanPage5() {
         setLoadingBrgy(true);
         const res = await fetch('/v1/barangays');
         const data = await res.json();
-        if (isMounted && Array.isArray(data)) setBarangays(data);
+        if (!isMounted || !Array.isArray(data)) return;
+
+        let list: Brgy[] = data;
+        // Put hardcoded barangay at the top if it's not in the API response
+        if (!list.some(b => String(b.id) === String(HARDCODED_BRGY.id))) {
+          list = [HARDCODED_BRGY, ...list];
+        }
+        setBarangays(list);
       } catch {
-        setBarangays([]);
+        // If API fails, still provide the hardcoded option so user can proceed
+        setBarangays([HARDCODED_BRGY]);
       } finally {
         setLoadingBrgy(false);
       }
@@ -215,6 +221,10 @@ export default function BPIBayanihanPage5() {
                     onBlur={onBlur('barangayId')}
                     disabled={loadingBrgy}
                   >
+                    {/* Make sure the hardcoded option exists */}
+                    <option value={String(HARDCODED_BRGY.id)}>
+                      {HARDCODED_BRGY.name} (Default)
+                    </option>
                     <option value="">{loadingBrgy ? 'Loading…' : 'Select your barangay'}</option>
                     {barangays.map((b) => (
                       <option key={b.id} value={String(b.id)}>{b.name}</option>

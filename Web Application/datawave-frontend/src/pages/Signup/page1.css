@@ -542,4 +542,35 @@
 .bpi-error{margin-top:.375rem;font-size:.8125rem;color:#b91c1c}
 
 /* reuse your existing disabled button styles */
-@media (max-width:640px){.bpi-form-grid{grid-template-columns:1fr}}
+/* @media (max-width:640px){.bpi-form-grid{grid-template-columns:1fr}} */
+@media (min-width: 768px) {
+  .bpi-page5 .bpi-main-content { padding-right: 2.5rem; }  /* +1rem vs default */
+}
+
+@media (min-width: 1280px) {
+  .bpi-page5 .bpi-main-content { padding-right: 4rem; }    /* roomier on wide screens */
+}
+/* ---------- Page 6: Success ---------- */
+.bpi-success-box{
+  background-color:#ecfdf5;       /* light green */
+  border:1px solid #d1fae5;
+  border-radius:.75rem;
+  padding:1rem 1.25rem;
+  max-width:36rem;
+  margin:0 auto 1rem auto;
+  text-align:center;
+}
+.bpi-success-heading{
+  font-weight:600;
+  color:#111827;
+  margin-bottom:.5rem;
+}
+.bpi-success-list{
+  list-style:disc;
+  text-align:left;
+  margin:0 auto;
+  padding-left:1.25rem;
+  max-width:24rem;
+  color:#065f46;
+  line-height:1.5;
+}

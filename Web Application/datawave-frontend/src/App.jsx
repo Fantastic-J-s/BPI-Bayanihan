@@ -10,6 +10,8 @@ import BPIBayanihanPage2 from "./pages/Signup/page2"
 import BPIBayanihanPage3 from "./pages/Signup/page3"
 import BPIBayanihanPage4 from "./pages/Signup/page4"
 import BPIBayanihanPage5 from "./pages/Signup/page5"
+import BPIBayanihanPage6 from "./pages/Signup/page6"
+import Home2 from "./pages/Home/home2"
 
 export default function App() {
   return (
@@ -42,6 +44,8 @@ export default function App() {
         <Route path="/page3" element={<BPIBayanihanPage3 />} />
         <Route path="/page4" element={<BPIBayanihanPage4 />} />
         <Route path="/page5" element={<BPIBayanihanPage5 />} />
+        <Route path="/page6" element={<BPIBayanihanPage6 />} />
+        <Route path="/home2" element={<Home2 />} />
 
 
     </Routes>
