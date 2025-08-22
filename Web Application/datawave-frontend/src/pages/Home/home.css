@@ -169,3 +169,108 @@
 .bpi-dots span:nth-child(3){background:#3b82f6}
 .bpi-dots span:nth-child(4){background:#f59e0b}
 .bpi-why-subfoot{color:#6b7280;font-size:.9rem}
+
+/* ---------- Resident Home ---------- */
+.bpi-resident{background:#fff; min-height:100vh; padding:8px 12px 70px 12px}
+
+/* Topbar */
+.bpi-topbar{display:flex;justify-content:space-between;align-items:center;padding:8px 6px 10px}
+.bpi-topbar-left{display:flex;align-items:center;gap:10px}
+.bpi-topbar-meta{display:flex;flex-direction:column}
+.bpi-topbar-title{font-weight:700;color:#111827}
+.bpi-topbar-sub{font-size:.8rem;color:#6b7280}
+.bpi-chip{background:#f3f4f6;border:1px solid #e5e7eb;border-radius:9999px;padding:6px 10px;font-size:.8rem}
+.bpi-ghost{background:#fff;border:1px solid #e5e7eb;border-radius:8px;padding:6px 10px}
+
+.bpi-greeting{display:flex;align-items:center;gap:12px;padding:8px 6px}
+.bpi-avatar{width:36px;height:36px;border-radius:9999px;background:#e5e7eb;display:flex;align-items:center;justify-content:center;font-weight:700;color:#111827}
+.bpi-greet-title{font-weight:700}
+.bpi-greet-row{display:flex;align-items:center;gap:6px;color:#6b7280;font-size:.85rem}
+.bpi-badge{padding:2px 6px;border-radius:9999px;border:1px solid #f3f4f6;background:#fff}
+.bpi-badge.gold{background:#fde68a;border-color:#fcd34d;color:#7c3e00}
+.bpi-dot-sep{opacity:.6}
+.bpi-streak{color:#6b7280}
+.bpi-action-inline{margin-left:auto}
+
+.bpi-small{border:none;border-radius:9999px;padding:6px 10px;font-weight:600;color:#fff}
+.bpi-small.danger{background:#dc2626}
+.bpi-small.success{background:#16a34a}
+
+/* Nudge */
+.bpi-nudge{margin:8px 6px;padding:8px 10px;background:#fff7ed;border:1px solid #ffedd5;border-radius:8px;color:#9a3412;font-size:.9rem}
+
+/* Wallet banner */
+.bpi-wallet{background:#dc2626;border-radius:12px;padding:14px 14px 10px 14px;color:#fff;margin:10px 6px;position:relative}
+.bpi-wallet-top{display:flex;justify-content:space-between;align-items:center}
+.bpi-wallet-title{font-weight:600;opacity:.95}
+.bpi-credit{display:flex;flex-direction:column;align-items:center;gap:2px}
+.bpi-credit-score{width:44px;height:44px;border-radius:9999px;background:rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;font-weight:800}
+.bpi-credit-label{font-size:.75rem;opacity:.8}
+.bpi-wallet-amount{font-size:2rem;font-weight:800;margin-top:2px}
+.bpi-wallet-sub{opacity:.9;margin-bottom:10px}
+.bpi-wallet-actions{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.bpi-wallet-act{background:#fff;border:none;border-radius:10px;padding:12px 6px;color:#111827;display:flex;flex-direction:column;align-items:center;gap:8px}
+.bpi-wallet-act svg{width:18px;height:18px}
+
+/* Features */
+.bpi-feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:12px 6px}
+@media (max-width:1024px){.bpi-feature-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:640px){.bpi-feature-grid{grid-template-columns:1fr}}
+.bpi-feature-card{background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:12px}
+.bpi-feature-head{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+.bpi-feature-icon{width:32px;height:32px;border-radius:8px;background:#f3f4f6;display:flex;align-items:center;justify-content:center}
+.bpi-feature-icon svg{width:18px;height:18px}
+.bpi-feature-title{font-weight:700;color:#111827}
+.bpi-feature-desc{color:#6b7280;font-size:.9rem;line-height:1.4;margin:6px 0}
+.bpi-feature-meta{color:#16a34a;font-size:.8rem;margin-bottom:8px}
+.bpi-feature-cta{background:#dc2626;color:#fff;border:none;border-radius:9999px;padding:8px 12px;font-weight:600}
+.bpi-feature-cta:hover{background:#b91c1c}
+
+/* Green banner */
+.bpi-banner-green{margin:8px 6px;background:#ecfdf5;border:1px solid #d1fae5;border-radius:12px;padding:12px;display:flex;justify-content:space-between;align-items:center}
+.bpi-banner-title{font-weight:700}
+.bpi-banner-sub{color:#065f46}
+.bpi-banner-hint{color:#10b981}
+
+/* Simple list row */
+.bpi-list-row{margin:8px 6px;background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:12px;display:flex;gap:10px;align-items:flex-start}
+.bpi-list-icon{width:32px;height:32px;border-radius:8px;background:#eef2ff;display:flex;align-items:center;justify-content:center;color:#4f46e5}
+.bpi-list-icon svg{width:18px;height:18px}
+.bpi-list-title{font-weight:700}
+.bpi-list-sub{color:#6b7280;font-size:.9rem}
+
+/* Week progress */
+.bpi-week{margin:10px 6px}
+.bpi-week-title{font-weight:700;margin-bottom:8px}
+.bpi-week-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+@media (max-width:900px){.bpi-week-grid{grid-template-columns:repeat(2,1fr)}}
+.bpi-progress-box{border-radius:10px;padding:12px;text-align:center;border:1px solid #e5e7eb}
+.bpi-progress-box.green{background:#ecfdf5;border-color:#d1fae5}
+.bpi-progress-box.blue{background:#eff6ff;border-color:#dbeafe}
+.bpi-progress-box.purple{background:#f5f3ff;border-color:#ede9fe}
+.bpi-progress-box.amber{background:#fffbeb;border-color:#fef3c7}
+.bpi-progress-value{font-weight:800;margin-bottom:4px}
+.bpi-progress-label{color:#6b7280;font-size:.85rem}
+
+/* Transactions */
+.bpi-tx{margin:10px 6px}
+.bpi-tx-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.bpi-tx-title{font-weight:700}
+.bpi-link{background:none;border:none;color:#b91c1c;font-weight:600;cursor:pointer}
+.bpi-tx-list{list-style:none;margin:0;padding:0}
+.bpi-tx-item{display:grid;grid-template-columns:16px 1fr auto auto;gap:10px;align-items:center;padding:10px;border-bottom:1px solid #f3f4f6}
+.bpi-tx-bullet{width:12px;height:12px;border-radius:9999px}
+.bpi-tx-bullet.income{background:#22c55e}
+.bpi-tx-bullet.expense{background:#ef4444}
+.bpi-tx-name{font-weight:600}
+.bpi-tx-tag{font-size:.8rem;color:#6b7280}
+.bpi-tx-amt{font-weight:700}
+.bpi-tx-amt.pos{color:#16a34a}
+.bpi-tx-amt.neg{color:#b91c1c}
+.bpi-tx-date{font-size:.8rem;color:#6b7280}
+
+/* Bottom tabs */
+.bpi-tabbar{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1px solid #e5e7eb;display:grid;grid-template-columns:repeat(5,1fr);padding:6px 4px;z-index:20}
+.bpi-tab{display:flex;flex-direction:column;align-items:center;gap:2px;padding:6px 4px;color:#6b7280;background:none;border:none}
+.bpi-tab-icon svg{width:18px;height:18px}
+.bpi-tab.active{color:#dc2626}

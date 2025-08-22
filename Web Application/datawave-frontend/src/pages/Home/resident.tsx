@@ -1,5 +1,5 @@
 import React from 'react';
-import './page1.css';
+import './home.css';
 
 type Txn = {
   id: string;

@@ -5,7 +5,7 @@ type RoleKey = 'resident' | 'officer' | 'policymaker' | 'engineer';
 
 export default function Home2() {
   const ROLE_ROUTES: Record<RoleKey, string> = {
-    resident: '/resident/home',
+    resident: '/resident',
     officer: '/officer/home',
     policymaker: '/policymaker/home',
     engineer: '/engineer/home',
