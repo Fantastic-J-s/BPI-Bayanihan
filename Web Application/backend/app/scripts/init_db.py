@@ -8,7 +8,7 @@ from app.db.models.user import User
 from app.db.models.barangay import Barangay
 from app.db.models.wallet import Wallet
 from app.db.models.ledger import LedgerEntry
-from app.db.models
+# from app.db.models
 
 # Drop the database
 Base.metadata.drop_all(bind=engine)
