@@ -4,6 +4,7 @@ from .api.router import api_router
 from .db.engine import engine
 from .db.base import Base
 from .db.models.user import Users  # import so table is created
+# from .db.models
 
 
 def create_app() -> FastAPI:

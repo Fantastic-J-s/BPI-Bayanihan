@@ -12,6 +12,11 @@ class User(Base):
     )
     password_hash: Mapped[str] = mapped_column(String(255), nullable=False)
 
-    # NEW: link user to barangay
+    # link to barangay
     barangay_id: Mapped[int] = mapped_column(ForeignKey("barangays.id"), nullable=True)
     barangay: Mapped["Barangay"] = relationship("Barangay", back_populates="residents")
+
+    # link to wallet
+    wallets = relationship(
+        "Wallet", back_populates="user", cascade="all, delete-orphan", lazy="selectin"
+    )
