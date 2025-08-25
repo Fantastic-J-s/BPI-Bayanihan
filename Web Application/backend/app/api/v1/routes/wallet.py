@@ -57,13 +57,15 @@ def ledger(
 ):
     svc = WalletService(session, user.id)
     items, next_cursor = svc.ledger(limit=limit, cursor=cursor)
-    out = [
-        LedgerItem(
-            id=e.id,
-            type=e.type,
-            amount=float(e.amount),
-            created_at=e.created_at.isoformat(),
-        )
-        for e in items
-    ]
-    return {"items": out, "next_cursor": next_cursor}
+    return {
+        "items": [
+            LedgerItem(
+                id=e.id,
+                type=e.type,
+                amount=float(e.amount),
+                created_at=e.created_at.isoformat(),
+            )
+            for e in items
+        ],
+        "next_cursor": next_cursor,
+    }
