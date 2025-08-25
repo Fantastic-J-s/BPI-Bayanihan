@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.api.v1.routes.auth import router as auth_router
 from app.api.v1.routes.barangays import router as barangay_router
+from app.api.v1.routes.wallet import router as wallet_router
 
 app = FastAPI(title="BPI Datawave API")
 
@@ -15,6 +16,7 @@ app.add_middleware(
 
 app.include_router(auth_router)
 app.include_router(barangay_router)
+app.include_router(wallet_router)
 
 
 @app.get("/_debug/routes")
