@@ -1,6 +1,6 @@
 # BPI-Bayanihan
 
-A progressive web application (PWA) and analytics platform designed to advance financial inclusion in the Philippines. Inspired by the Bayanihan spirit, BPI Datawave delivers context‑aware, personalized financial literacy, gamified savings, and barangay‑level analytics to help communities build healthier savings habits.
+A progressive web application (PWA) and analytics platform designed to advance financial inclusion in the Philippines. Inspired by the Bayanihan spirit, BPI Bayanihan delivers context‑aware, personalized financial literacy, gamified savings, and barangay‑level analytics to help communities build healthier savings habits.
 
 ---
 
